@@ -1,0 +1,151 @@
+:root {
+  --body-light: rgb(242, 242, 242);
+  --body-night: hsl(240deg 20% 12%);
+  --todo-light: hsl(0deg 0% 100%);
+  --alt-todo-light: hsl(0, 0%, 87%);
+  --todo-night: rgb(42, 44, 68);
+  --alt-todo-night: rgb(28, 30, 48);
+  --circle: hsl(234, 23%, 83%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--body-light);
+}
+
+body.night {
+  background-color: var(--body-night);
+}
+
+.todo {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  max-width: 100%;
+}
+
+/* START Header */
+
+@media (max-width: 767px) {
+  .todo {
+    width: 98%;
+  }
+}
+
+.todo .header {
+  color: hsl(0, 0%, 98%);
+}
+
+.todo .header .mode {
+  height: 34px;
+}
+
+.todo .header .night-mode {
+  margin-top: -34px;
+}
+
+.todo .header .night-mode.active {
+  margin-top: 0;
+}
+/* END Header */
+
+/* START Body */
+
+.todo .body .add::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  left: calc(1.5rem / 2);
+  transform: translateY(-50%);
+  border: 3px solid var(--circle);
+}
+
+.todo .body input:hover {
+  background-color: var(--alt-todo-light);
+}
+
+.todo .body input,
+.todo .body input:focus {
+  background-color: var(--todo-light);
+}
+
+/* Input Night Mode */
+
+body.night .todo .body input:hover {
+  background-color: var(--alt-todo-night);
+}
+
+body.night .todo .body input,
+body.night .todo .body input:focus {
+  background-color: var(--todo-night);
+  color: var(--todo-light);
+}
+/* END Body */
+
+/* START Todo Menu */
+.todo-menu {
+  background-color: var(--todo-light);
+}
+
+.todo-menu p.task {
+  cursor: pointer;
+  transition: 0.3s;
+  /* transform: translateX(-50px); */
+}
+
+.todo-menu p.task.draged-over {
+  background-color: var(--alt-todo-light);
+}
+
+body.night .todo-menu p.task.draged-over {
+  background-color: var(--alt-todo-night);
+}
+
+.todo-menu p.task::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  left: calc(1.5rem / 2);
+  transform: translateY(-50%);
+  border: 3px solid var(--circle);
+}
+
+.todo-menu p.task.done {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todo-menu p.task.done span.check {
+  transform: translateY(-50%) scale(1);
+}
+
+.todo-menu p.task span.check {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: calc(1.5rem / 2);
+  background: linear-gradient(90deg, hsl(210deg 99% 72%), hsl(264deg 84% 71%));
+  border-radius: 50%;
+  transform: translateY(-50%) scale(0);
+}
+
+/* Todo Menu Night */
+
+body.night .todo-menu {
+  background-color: var(--todo-night);
+  color: var(--todo-light);
+}
+/* END Todo Menu */

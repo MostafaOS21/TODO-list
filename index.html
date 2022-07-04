@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO app</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="transition">
+    <div class="wallpaper-img w-full bg-no-repeat">
+      <img
+        class="light w-full absolute transition-opacity"
+        src="todo-app-main/images/bg-desktop-light.jpg"
+        alt=""
+      />
+      <img
+        class="night w-full absolute transition-opacity opacity-0"
+        src="todo-app-main/images/bg-desktop-dark.jpg"
+        alt=""
+      />
+    </div>
+    <div class="todo flex flex-col gap-5 absolute lg:top-12 top-8 px-3">
+      <div class="header flex justify-between items-center">
+        <h1 class="tracking-widest text-3xl font-bold">TODO</h1>
+        <div class="mode cursor-pointer overflow-hidden">
+          <img
+            class="night-mode transition-all active w-50 p-1"
+            src="todo-app-main/images/icon-moon.svg"
+            alt="mode"
+          />
+          <img
+            class="light-mode transition-all w-50 p-1"
+            src="todo-app-main/images/icon-sun.svg"
+            alt="mode"
+          />
+        </div>
+      </div>
+      <div class="body">
+        <div class="add relative transition">
+          <input
+            class="caret-blue-900 shadow focus:shadow-xl transition add-todo w-full focus:outline-0 p-3 pl-10 text-lg rounded"
+            placeholder="create new todo..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="todo-menu p-2 rounded shadow-xl">
+        <div class="cont">
+          <!-- <p class="task py-3 pl-10 relative"><span class="check">
+            <img src="todo-app-main/images/icon-check.svg" alt="">
+          </span> Read a book</p> -->
+        </div>
+        <div class="footer flex md:gap-3 gap-2 capitalize items-center ">
+          <div class="counter flex-1 text-xs">
+            <span class="nums">0</span>
+            items left
+          </div>
+          <div class="sort flex gap-3 text-sm py-1">
+            <div class="all cursor-pointer active">all</div>
+            <div class="active-fil cursor-pointer">active</div>
+            <div class="completed cursor-pointer">completed</div>
+          </div>
+          <div class="clear ml-3 text-sm cursor-pointer text-red-500">clear completed</div>
+        </div>
+      </div>
+      <span class="text-center text-sm text-gray-500">Drag and drop to reader list</span>
+      <audio id="checked-aud" src="todo-app-main/audio/checked.mp3"></audio>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
