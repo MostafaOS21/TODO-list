@@ -35,7 +35,6 @@ function change_mode() {
 
   mode.addEventListener("click", () => {
     document.body.classList.toggle("night");
-    document.querySelector("img.night-mode").classList.toggle("active");
     if (document.body.classList.contains("night")) {
       window.localStorage.setItem("dk-mode", true);
     } else {
