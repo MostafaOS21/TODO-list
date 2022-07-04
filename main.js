@@ -24,6 +24,8 @@ if (!window.localStorage.getItem("dk-mode")) {
 
 if (window.localStorage.getItem("dk-mode") === "true") {
   document.body.classList.add("night");
+} else {
+  document.body.classList.remove("night");
 }
 // Change mode [night-light]
 function change_mode() {
@@ -36,6 +38,8 @@ function change_mode() {
     document.querySelector("img.night-mode").classList.toggle("active");
     if (document.body.classList.contains("night")) {
       window.localStorage.setItem("dk-mode", true);
+    } else {
+      window.localStorage.setItem("dk-mode", false);
     }
   });
 }
