@@ -40,13 +40,10 @@ body.night {
   height: 34px;
 }
 
-.todo .header .night-mode {
+body.night .todo .header .night-mode {
   margin-top: -34px;
 }
 
-.todo .header .night-mode.active {
-  margin-top: 0;
-}
 /* END Header */
 
 /* START Body */
